@@ -6,4 +6,4 @@ Villages have many issues that are similar to larger cities without the resource
 We will use foursquare to determine the types of venues available in these villages or the distance to essential services. We will group the venues using k-means to determine the villages of similar caracteristics that may require similar services.
 
 The Audience:
-State and local governments can use the results of this study to allocate resources and develop plans to help the people and their villages. This help could be in the form of indicating where to build rural medical clinics so everyone in the state can have access to health care.   
+State and local governments can use the results of this study to allocate resources and develop plans to help the people and their villages. This help could be in the form of indicating where to build rural medical clinics so everyone in the state can have access to health care.
