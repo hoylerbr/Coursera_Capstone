@@ -1,13 +1,13 @@
 # Coursara Capstone project - Villages of New York
-## This study will compare the villages of New York both by population and venues.
+## This study will compare the villages of New York by important venues and distance from hospitals.
 ## Introduction/Business Problem
-Villages have many issues that are similar to larger cities without the resources of larger cities. Some villages are near major cities, others are very rural in which there may not be essential services like hospitals or even grocery stores.
+Villages have many issues that are similar to larger cities without the resources of larger cities. Some villages are near major cities, others are very rural and may not have essential services like hospitals or even grocery stores.
 
 We will use foursquare to determine the types of venues available in these villages or the distance to essential services. We will group the venues using k-means to determine the villages of similar caracteristics that may require similar services.
 
 In addition we will identify all of the hospitals in New York and determine how far they are from each village.
 
-###The Audience:
+### The Audience:
 State and local governments can use the results of this study to allocate resources and develop plans to help the people and their villages. The specific result of this study is to identify those villages needing medical facilities.
 
 ## Data Sources
@@ -17,18 +17,18 @@ This site has a table with the following columns:
 
 Village, county, population,land,water,latitude and longintude, geoID,ANSIcode, Town
 
-With this data to identify each of the towns with the latitude and longitude I can use foursquare to locate
-nearby venues for each town.  From a table of the venues I will determine which villages are like each other.
+With this data to identify each of the villages with their latitude and longitude. I can use foursquare to locate
+nearby venues for each village.  From a table of the venues I will determine which villages are like each other.
 
 ###  Foursquare hospital information
 I attempted to use Foursquare to get hospital infomration as follows:
 Foursquare category ids can be found at https://developer.foursquare.com/docs/resources/categories
 The category ID for hospital is "4bf58dd8d48988d196941735"
 
-This command should give me the information I need:
+This command should give me the information I needed:
 https://api.foursquare.com/v2/venues/search?ll=29.253219,-81.732377&categoryId=4bf58dd8d48988d196941735&client_id=MYCLIENTID&client_secret=MYCLIENTSECRET&limit=1&v=20180628
 
-However Foursquare did not get me the information in a maner I could use so I investigated other sources for hospital information
+However Foursquare did not get me the information in a manor I could use so I investigated other sources for hospital information.
 
 ### Other data sources for Hospital information
 
@@ -83,35 +83,36 @@ Although K-means clustering separted clusters 2 and 3 I would put them together 
 There are 279 hospitals in New York of which only 166 are currently open.  Hospitals are usually closed for economic reasons and the closed hospitals may have largly served rural areas.
 
 The villages are separted from hospitals as follows:
-Number of villages less than 5 miles from a hospital:  218
-Number of villages 5 to 10 milles from a hospital:  134
-Number of villages 10 to 20 milles from a hospital:  163
-Number of villages more than 20 milles from a hospital:  18
+- Number of villages less than 5 miles from a hospital:  218
+- Number of villages 5 to 10 milles from a hospital:  134
+- Number of villages 10 to 20 milles from a hospital:  163
+- Number of villages more than 20 milles from a hospital:  18
 
 The villages that are more than 20 miles from a hospital are:
-        Village         Distance to Hospital
-        Afton              20.770746
-        Cambridge          21.479638
-        Cape Vincent       23.389949
-        Dering Harbor      20.485303
-        East Hampton       24.966050
-        Gainesville        23.021352
-        Granville          20.254532
-        Hunter             22.034637
-        Lacona             23.506046
-        Nichols            22.781216
-        Pulaski            20.776109
-        Rouses Point       20.719803
-        Sag Harbor         20.504951
-        Sagaponack         21.152290
-        Sandy Creek        23.804047
-        Silver Springs     20.988831
-        Speculator         35.784296
-        Whitehall          20.973112
+-        Village         Distance to Hospital
+-        Afton              20.7
+-        Cambridge          21.5
+-        Cape Vincent       23.4
+-        Dering Harbor      20.5
+-        East Hampton       24.9
+-        Gainesville        23.0
+-        Granville          20.3
+-        Hunter             22.0
+-        Lacona             23.5
+-        Nichols            22.8
+-        Pulaski            20.8
+-        Rouses Point       20.7
+-        Sag Harbor         20.5
+-        Sagaponack         21.2
+-        Sandy Creek        23.8
+-        Silver Springs     21.0
+-        Speculator         35.8
+-        Whitehall          20.8
 
 ## Discussion
 ### More Hospitals needed
-Access to hospitals is an important crucial for an indivduals survability from a medical emergancy.  This study identified 18 villages that are more than 20 miles from the nearest hospital.  20 miles of straight line distance will take more than 30 minutes on the roads many of these villagers will need to travel on to get to the hospital. Some of these villages are near each other such as Pulaski and Sandy Creek.  A single emergency care facility located between them would significantly cut the travel time for these villagers.
+Rapid access to hospitals is crucial for an indivduals survability from a medical emergancy.  This study identified 18 villages that are more than 20 miles from the nearest hospital.  20 miles of straight line distance will take more than 30 minutes on the roads many of these villagers will need to travel to get to the hospital. 
+Some of these villages are near each other such as Pulaski and Sandy Creek.  A single emergency care facility located between them would significantly cut the travel time for these villagers.
 I recommend placing emergency care facilies near these villages to increase the likely hood of survival from events like heart attacks or severe injuries.
 ### Rural Villages
 Despite the notoriaty of New York State's large cities such as NYC and Buffalo, New York's villages are largely rural and can be far from hospitals, shopping and other infrastructure.  This tends to make the villages feel isolated and self sufficiant.  The politics of villages is different than that of cites and I recommend further study in this area.
